@@ -5,25 +5,23 @@ import Header from './components/Header';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Main from './components/Main';
-
-import logoUrl from "./assets/Logo.svg"
-import ogImage from "./assets/restaurant chef B.jpg"
+import BookingForm from './components/BookingForm';
+import MetaTags from './components/MetaTags';
+import Menu from './components/Menu';
+import ogImage from "./assets/banner.jpg"
+import Story from './components/Story';
 
 function App() {
   return (
     <>
-    <meta name="og:title" content="Little Lemon Restaurant"/>
-    <meta name="description" content="Little Lemon, family owned Mediterranean restaurant, traditional recipes served with a modern twist, food delivery, book a table"/>
-    <meta name="og:description" content="Little Lemon, family owned Mediterranean restaurant, traditional recipes served with a modern twist, food delivery, book a table"/>
-    <meta name="og:image" content={ogImage}/>
-
-
-
-    <Header />
-    <Nav logo={logoUrl} />
+    <MetaTags ogImage={ogImage} />
+    <Nav />
     <Main />
-    <Footer logo={logoUrl} />
-    </>
+    <Menu />
+    <Story />
+    <Footer />
+
+   </>
   );
 }
 

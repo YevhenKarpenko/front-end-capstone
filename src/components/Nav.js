@@ -1,28 +1,49 @@
-function Nav(props){
+import '../App.css';
+import logo from "../assets/Logo .svg"
+import {useState} from "react"
+
+function Nav(){
+const [isMenuOpen, setMenuOpen] = useState(false)
+
+    const toggleMenu = () => (setMenuOpen( (prevValue) => !prevValue));
+
     return(
-    <nav>   
-     <img src={props.logo}/>
-     <ul>
+   <nav className={`navbar ${isMenuOpen ? "open" : ""}`}>
+        <a href="/" className='logo'>
+            <img src={logo} alt="Logo"/>
+        </a>
+
+        {/* Mobile navBar */}
+
+        <div className='menu-icon' onClick={toggleMenu}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+        </div>
+
+
+        {/* Nav items */}
+        <ul className={`nav-links ${isMenuOpen ? "visible" : ""}`}>
             <li>
-                <a>Home</a>
+                <a href="/">Home</a>
             </li>
             <li>
-                <a>About</a>
+                <a href="/">About</a>
             </li>
             <li>
-                <a>Menu</a>
+                <a href="/">Menu</a>
             </li>
             <li>
-                <a>LogIn</a>
-            </li>   
-            <li>
-                <a>Order online</a>
+                <a href="/">Reservations</a>
             </li>
             <li>
-                <a>Reservations</a>
+                <a href="/">Order Online</a>
+            </li>
+            <li>
+                <a href="/">LogIn</a>
             </li>
         </ul>
-        </nav>
+   </nav>
 
     )
 }
